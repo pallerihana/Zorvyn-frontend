@@ -10,14 +10,15 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: 'terser',
+    minify: 'esbuild',  // Use esbuild (built-in) instead of terser
+    target: 'es2020',
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          bootstrap: ['react-bootstrap', 'bootstrap'],
-          charts: ['recharts', 'chart.js', 'react-chartjs-2'],
-          icons: ['react-icons']
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'bootstrap-vendor': ['react-bootstrap', 'bootstrap'],
+          'chart-vendor': ['recharts', 'chart.js', 'react-chartjs-2'],
+          'icon-vendor': ['react-icons']
         }
       }
     }

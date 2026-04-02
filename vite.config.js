@@ -7,10 +7,13 @@ export default defineConfig({
     port: 3000,
     open: true
   },
+  define: {
+    'import.meta.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL)
+  },
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: 'esbuild',  // CHANGE THIS - use 'esbuild' instead of 'terser'
+    minify: 'esbuild',
     target: 'es2020',
     rollupOptions: {
       output: {

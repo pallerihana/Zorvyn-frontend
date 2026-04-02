@@ -10,7 +10,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: 'esbuild',  // Use esbuild (built-in) instead of terser
+    minify: 'esbuild',  // CHANGE THIS - use 'esbuild' instead of 'terser'
     target: 'es2020',
     rollupOptions: {
       output: {
